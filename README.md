@@ -9,7 +9,9 @@ Use this first so you have something to compare against.
 
 Prompt A (zero-shot, vague)
 
-`Please build a tic tac toe game.`
+```
+Please build a tic tac toe game.
+```
 
 Expected issues:
 
