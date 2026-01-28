@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+  color: #eee;
+}
+
+.game {
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.status {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  min-height: 1.5em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: min(280px, 90vw);
+  margin: 0 auto 1.5rem;
+  aspect-ratio: 1;
+}
+
+.cell {
+  border: 2px solid #4a5568;
+  background: #2d3748;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.cell:hover:not(.taken):not([disabled]) {
+  background: #3d4a5c;
+  border-color: #63b3ed;
+}
+
+.cell:active:not(.taken):not([disabled]) {
+  transform: scale(0.97);
+}
+
+.cell.taken {
+  cursor: default;
+}
+
+.cell[data-value="X"] {
+  color: #63b3ed;
+}
+
+.cell[data-value="O"] {
+  color: #68d391;
+}
+
+.cell.winner {
+  background: rgba(72, 187, 120, 0.35);
+  border-color: #48bb78;
+  box-shadow: 0 0 12px rgba(72, 187, 120, 0.4);
+}
+
+.restart {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  background: #68d391;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.restart:hover {
+  background: #9ae6b4;
+}
+
+.restart:active {
+  transform: scale(0.98);
+}
